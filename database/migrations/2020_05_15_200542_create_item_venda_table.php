@@ -17,6 +17,7 @@ class CreateItemVendaTable extends Migration
             $table->id('id_item_venda');
             $table->bigInteger('venda');
             $table->bigInteger('produto');
+            $table->double('valor_produto', 8, 2);
             $table->integer('quantidade');
 
             $table->foreign('venda')->references('id_venda')->on('venda');
