@@ -13,6 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ClienteController@index')->name('listar_cliente');
+Route::get('/pagina_cadastrar', 'ClienteController@pagina_cadastrar');
+Route::get('/pagina_editar/{id}', 'ClienteController@pagina_editar');
+
+Route::get('/pagina_listar_produto', 'ProdutoController@index')->name('listar_produto');
+Route::get('/pagina_cadastrar_produto', 'ProdutoController@pagina_cadastrar');
+Route::get('/pagina_editar_produto/{id}', 'ProdutoController@pagina_editar');
+
+
