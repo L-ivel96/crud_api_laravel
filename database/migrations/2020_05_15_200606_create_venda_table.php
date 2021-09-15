@@ -15,7 +15,7 @@ class CreateVendaTable extends Migration
     {
         Schema::create('venda', function (Blueprint $table) {
             $table->id('id_venda');
-            $table->bigInteger('cliente');
+            $table->foreignId('cliente');
             $table->double('total_venda', 8, 2);
             $table->dateTime('data_venda');
 

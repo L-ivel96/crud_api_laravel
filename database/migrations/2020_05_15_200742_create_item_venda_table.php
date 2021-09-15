@@ -15,8 +15,8 @@ class CreateItemVendaTable extends Migration
     {
         Schema::create('item_venda', function (Blueprint $table) {
             $table->id('id_item_venda');
-            $table->bigInteger('venda');
-            $table->bigInteger('produto');
+            $table->foreignId('venda');
+            $table->foreignId('produto');
             $table->double('valor_produto', 8, 2);
             $table->integer('quantidade');
 

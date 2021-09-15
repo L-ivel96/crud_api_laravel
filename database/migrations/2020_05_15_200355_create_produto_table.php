@@ -18,7 +18,6 @@ class CreateProdutoTable extends Migration
             $table->string('produto', 150);
             $table->string('descricao', 300);
             $table->double('valor', 8, 2);
-            $table->integer('quantidade_estoque');
             $table->timestamps();
         });
     }
