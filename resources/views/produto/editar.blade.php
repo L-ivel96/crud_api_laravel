@@ -21,10 +21,6 @@
             <input type="number" class="form-control" name="valor" id="valor" aria-describedby="Valor(R$)" placeholder="Valor(R$)" required="required">
         </div>
         <div class="form-group">
-            <label for="quantidade_estoque">Quantidade em estoque</label>
-            <input type="number" class="form-control" min="0" name="quantidade_estoque" id="quantidade_estoque" aria-describedby="Quantidade em estoque" placeholder="Quantidade em estoque" required="required">
-        </div>
-        <div class="form-group">
             <button class="btn btn-primary" id="editar">Editar</button>
         </div>
     </form>
@@ -42,7 +38,6 @@
                 $("#produto").val(dados.produto);
                 $("#descricao").val(dados.descricao);
                 $("#valor").val(dados.valor);
-                $("#quantidade_estoque").val(dados.quantidade_estoque);
 
             })
             .fail(function(erro) {

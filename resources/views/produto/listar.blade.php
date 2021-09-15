@@ -11,7 +11,6 @@
                 <th>Produto</th>
                 <th>Descrição</th>
                 <th>Valor (R$)</th>
-                <th>Quantidade (Estoque)</th>
                 <th>Editar</th>
                 <th>Deletar</th>
             </tr>
@@ -47,8 +46,6 @@
                         coluna_descricao.append(this.descricao);
                     let coluna_valor = $("<td></td>");
                         coluna_valor.append(this.valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
-                    let coluna_quantidade_estoque = $("<td></td>");
-                        coluna_quantidade_estoque.append(this.quantidade_estoque);
 
                     let link_editar = './pagina_editar_produto/' + this.id_produto;
                     let btn_editar = $("<a></a>");
@@ -72,7 +69,6 @@
                     linha.append(coluna_produto);
                     linha.append(coluna_descricao);
                     linha.append(coluna_valor);
-                    linha.append(coluna_quantidade_estoque);
                     linha.append(coluna_editar);
                     linha.append(coluna_deletar);
 
