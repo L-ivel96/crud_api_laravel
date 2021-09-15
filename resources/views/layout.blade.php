@@ -17,7 +17,7 @@
         <div class="d-flex justify-content-around">
             <a class="navbar-brand" href="{{ route('listar_cliente') }}">Clientes</a>
             <a class="navbar-brand" href="{{ route('listar_produto') }}">Produtos</a>
-            <a class="navbar-brand" href="{{ route('listar_cliente') }}">Vendas</a>
+            <?php //<a class="navbar-brand" href="{{ route('listar_cliente') }}">Vendas</a> ?>
         </div>
     </nav>
     <div class="container">
