@@ -5,23 +5,25 @@
 @endsection
 
 @section('conteudo')
-    <table id="tabela_clientes" class="table table-striped table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th>Nome</th>
-                <th>CPF/CNPJ</th>
-                <th>Editar</th>
-                <th>Deletar</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="4"><a href="./pagina_cadastrar" class="btn btn-info">Adicionar Cliente</a></td>
-            </tr>
-        </tfoot>
-    </table>
+    <div class="table-responsive">
+        <table id="tabela_clientes" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Nome</th>
+                    <th>CPF/CNPJ</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4"><a href="./cadastrar_cliente" class="btn btn-info">Adicionar Cliente</a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 
     <script>
         var corpo_tabela = $("#tabela_clientes tbody");
@@ -44,7 +46,7 @@
                     let coluna_cpf_cnpj = $("<td></td>");
                         coluna_cpf_cnpj.append(this.cpf_cnpj);
 
-                    let link_editar = './pagina_editar/' + this.id_cliente;
+                    let link_editar = './editar_cliente/' + this.id_cliente;
                     let btn_editar = $("<a></a>");
                         btn_editar.attr({
                             class: 'btn btn-warning',

@@ -5,25 +5,27 @@
 @endsection
 
 @section('conteudo')
-    <table id="tabela_clientes" class="table table-striped table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th>Produto</th>
-                <th>Descrição</th>
-                <th>Valor (R$)</th>
-                <th>Editar</th>
-                <th>Deletar</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td colspan="6"><a href="./pagina_cadastrar_produto" class="btn btn-info">Adicionar Produto</a></td>
-            </tr>
-        </tfoot>
-    </table>
-
+    <div class="table-responsive">
+        <table id="tabela_clientes" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Produto</th>
+                    <th>Descrição</th>
+                    <th>Valor (R$)</th>
+                    <th>Editar</th>
+                    <th>Deletar</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="6"><a href="./cadastrar_produto" class="btn btn-info">Adicionar Produto</a></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    
     <script>
         var corpo_tabela = $("#tabela_clientes tbody");
         function carrega_dados()
@@ -47,7 +49,7 @@
                     let coluna_valor = $("<td></td>");
                         coluna_valor.append(this.valor.toLocaleString('pt-br', {minimumFractionDigits: 2}));
 
-                    let link_editar = './pagina_editar_produto/' + this.id_produto;
+                    let link_editar = './editar_produto/' + this.id_produto;
                     let btn_editar = $("<a></a>");
                         btn_editar.attr({
                             class: 'btn btn-warning',
