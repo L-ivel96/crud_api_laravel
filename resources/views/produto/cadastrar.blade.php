@@ -20,11 +20,8 @@
             <input type="number" class="form-control" name="valor" id="valor" aria-describedby="Valor(R$)" placeholder="Valor(R$)" required="required">
         </div>
         <div class="form-group">
-            <label for="quantidade_estoque">Quantidade em estoque</label>
-            <input type="number" class="form-control" min="0" name="quantidade_estoque" id="quantidade_estoque" aria-describedby="Quantidade em estoque" placeholder="Quantidade em estoque" required="required">
-        </div>
-        <div class="form-group">
             <button class="btn btn-primary" id="cadastrar">Cadastrar</button>
+            <a href="./pagina_listar_produto" class="btn btn-primary">Voltar</a>
         </div>
     </form>
 

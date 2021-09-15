@@ -41,7 +41,6 @@ class ProdutoController extends Controller
 
             //formatação
             $valor = $request->valor;
-            $quantidade_estoque = (int)$request->quantidade_estoque;
             $descricao = empty($request->descricao) ? "" : $request->descricao;
 
             if(
@@ -54,8 +53,7 @@ class ProdutoController extends Controller
 	    	$dados = array(
 	    		"produto" => $request->produto,
 	    		"descricao" => $descricao,
-	    		"valor" => $valor,
-	    		"quantidade_estoque" => $quantidade_estoque
+	    		"valor" => $valor
 	    	);
 	    	return $cliente = Produto::create($dados);
 
@@ -106,8 +104,7 @@ class ProdutoController extends Controller
             }
 
             //formatação
-            $valor = number_format($request->valor,2,".","");;
-            $quantidade_estoque = (int) $request->quantidade_estoque;
+            $valor = number_format($request->valor,2,".","");
             $descricao = empty($request->descricao) ? "" : $request->descricao;
 
     		if(
@@ -121,8 +118,7 @@ class ProdutoController extends Controller
             $dados = array(
                 "produto" => $request->produto,
                 "descricao" => $descricao,
-                "valor" => $valor,
-                "quantidade_estoque" => $quantidade_estoque
+                "valor" => $valor
             );
     		
     		return $update = Produto::where('id_produto', $request->id)->update($dados);
