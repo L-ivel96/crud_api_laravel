@@ -13,12 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ClienteController@index')->name('listar_cliente');
-Route::get('/pagina_cadastrar', 'ClienteController@pagina_cadastrar');
-Route::get('/pagina_editar/{id}', 'ClienteController@pagina_editar');
+Route::get('/', 'ClienteController@index');
 
-Route::get('/pagina_listar_produto', 'ProdutoController@index')->name('listar_produto');
-Route::get('/pagina_cadastrar_produto', 'ProdutoController@pagina_cadastrar');
-Route::get('/pagina_editar_produto/{id}', 'ProdutoController@pagina_editar');
+Route::get('listar_clientes', 'ClienteController@index')->name('listar_cliente');
+Route::get('cadastrar_cliente', 'ClienteController@pagina_cadastrar');
+Route::get('editar_cliente/{id}', 'ClienteController@pagina_editar');
+
+Route::get('listar_produto', 'ProdutoController@index')->name('listar_produto');
+Route::get('cadastrar_produto', 'ProdutoController@pagina_cadastrar');
+Route::get('editar_produto/{id}', 'ProdutoController@pagina_editar');
 
 

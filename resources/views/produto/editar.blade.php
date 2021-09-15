@@ -22,6 +22,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" id="editar">Editar</button>
+            <a href="./listar_produto" class="btn btn-primary">Voltar</a>
         </div>
     </form>
 
@@ -65,7 +66,7 @@
                 })
                 .done(function(dados) {
                     console.log("success");
-                    window.location.href = "../pagina_listar_produto"; 
+                    window.location.href = "/listar_produto"; 
 
                 })
                 .fail(function(erro) {

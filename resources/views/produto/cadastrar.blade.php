@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" id="cadastrar">Cadastrar</button>
-            <a href="./pagina_listar_produto" class="btn btn-primary">Voltar</a>
+            <a href="./listar_produto" class="btn btn-primary">Voltar</a>
         </div>
     </form>
 
@@ -42,7 +42,7 @@
                     console.log(dados);
                     if(dados.id)
                     {
-                        window.location.href = "./pagina_listar_produto";    
+                        window.location.href = "/listar_produto";    
                     }
                     else
                     {
