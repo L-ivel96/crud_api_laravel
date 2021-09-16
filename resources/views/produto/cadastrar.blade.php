@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" id="cadastrar">Cadastrar</button>
-            <a href="./listar_produto" class="btn btn-primary">Voltar</a>
+            <a href="/listar_produto" class="btn btn-primary">Voltar</a>
         </div>
     </form>
 

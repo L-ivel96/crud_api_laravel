@@ -11,8 +11,7 @@
                 <tr class="text-center">
                     <th>Nome</th>
                     <th>CPF/CNPJ</th>
-                    <th>Editar</th>
-                    <th>Deletar</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
@@ -56,13 +55,13 @@
                     let link_editar = './editar_cliente/' + this.id_cliente;
                     let btn_editar = $("<a></a>");
                         btn_editar.attr({
-                            class: 'btn btn-warning',
+                            class: 'btn btn-warning mb-1 mr-2',
                             href: link_editar
                         });
                         btn_editar.html('Editar <i class="fas fa-edit"></i>');
 
                     let btn_excluir = $("<a></a>");
-                        btn_excluir.attr('class', 'btn btn-danger');
+                        btn_excluir.attr('class', 'btn btn-danger mb-1 mr-2');
                         btn_excluir.html('Excluir <i class="fas fa-trash-alt"></i>');
                         btn_excluir.click(deleta_linha);
 
