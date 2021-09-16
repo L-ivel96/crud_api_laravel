@@ -40,14 +40,14 @@ Na versão atual, está com uma chave fixa que se baseia em:
 
 
 ### Clientes
-1. Listar
+#### Listar
 **rota:** "/api/listar_cliente"
 **Método:** POST
 **Parametros:** {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
 }
 
-2. Cadastrar
+#### Cadastrar
 **rota:** "/api/cadastrar_cliente"
 **Método:** POST
 **Parametros:** {
@@ -56,7 +56,7 @@ Na versão atual, está com uma chave fixa que se baseia em:
     nome: "Nome Teste" [STRING]
 }
 
-3. Editar
+#### Editar
 **rota:** "/api/editar_cliente"
 **Método:** POST
 **Parametros:** {
@@ -65,7 +65,7 @@ Na versão atual, está com uma chave fixa que se baseia em:
     nome: "Nome Teste 2" [ STRING ]
 }
 
-4. Excluir
+#### Excluir
 **rota:** "/api/excluir_cliente"
 **Método:** POST
 **Parametros:** {
@@ -74,14 +74,14 @@ Na versão atual, está com uma chave fixa que se baseia em:
 }
 
 ### Produtos
-1. Listar
+#### Listar
 **rota:** "/api/listar_produto"
 **Método:** POST
 **Parametros:** {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
 }
 
-2. Cadastrar
+#### Cadastrar
 **rota:** "/api/cadastrar_produto"
 **Método:** POST
 **Parametros:** {
@@ -91,7 +91,7 @@ Na versão atual, está com uma chave fixa que se baseia em:
     valor: 250.46 [ FLOAT ]
 }
 
-3. Editar
+#### Editar
 **rota:** "/api/editar_produto"
 **Método:** POST
 **Parametros:** {
@@ -102,7 +102,7 @@ Na versão atual, está com uma chave fixa que se baseia em:
     id: 1 [ INTEGER ]
 }
 
-4. Excluir
+#### Excluir
 **rota:** "/api/excluir_produto"
 **Método:** POST
 **Parametros:** {
