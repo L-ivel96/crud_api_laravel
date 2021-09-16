@@ -36,8 +36,23 @@ Links de documentações e materiais de apoio
 **TOKEN** 
 <p>Na versão atual, está com uma chave fixa que se baseia em: <br/>
 "senha_api@" . Carbon::today()<br/>
-**OBS:** não contém aspas duplas (") na senha, é a concatenação de __senha_api@__ + Carbon::today()</p><br/>
+<b>OBS:</b> não contém aspas duplas (") na senha, é a concatenação de __senha_api@__ + Carbon::today()
+</p><br/>
 
+**AUTENTICAÇÃO JWT**
+<p>As rotas com autenticação JWT possuem apenas o caminho "v2" que deve ser posto depois de "api/", exemplo:<br>
+<b>Sem Autenticação JWT (S/A):</b> /api/listar_cliente<br>
+<b>Com Autenticação JWT (S/A):</b> /api/v2/listar_cliente<br>
+<p/>
+
+**Utilizando o Postaman**
+Para requisições você pode utilizar o [POSTMAN](https://www.postman.com/downloads/), neste repositório há um pacote do postman com todas as requisições e parametros já configurados, para utilizar, você deve apenas importar o arquivo que está em "postman/crud_laravel.postman_collection.json"
+<br><b>OBS:</b> Para adicionar o token JWT, você deve selecionar a aba "Authorization" da requisiçaõ do postman, escolher o type "Barrer token" e add o token no campo de texto 
+
+**Rota de registro**
+Para facilitar o uso do JWT, foi disponibilizado a rota "/api/registrar", para que você posso cadastrar um usuário e já receber o token JWT [ ATENÇÃO EM UM AMBIENTE REAL NÃO SE UTILIZA ISSO, APENAS PARA FACILITAR USO E PARA FINS DE DEMONSTRAÇÃO OU DIDATICOS ]
+
+<br><b>Nota:</b> As rotas estarão todas demonstradas sem autenticação JWT, para testar com ela, apenas siga a instrução acima "AUTENTICAÇÃO JWT"<br>
 ## Clientes
 ### **Listar**
 ```
@@ -135,6 +150,11 @@ Você também precisará instalar:
   - composer
 
 ## 1. Baixar dependencias
+Você deve realizar a clonagem do projeto execute o seguinte comando:
+```
+git clone https://github.com/L-ivel96/crud_api_laravel.git
+```
+
 Na raiz do projeto, execute o seguinte comando no terminal:
 ```
 composer install
