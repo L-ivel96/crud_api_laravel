@@ -5,11 +5,12 @@ namespace App\model;
 use Illuminate\Database\Eloquent\Model;
 use Cliente;
 use Produto;
+use Venda;
 
 class ItemVenda extends Model
 {
-    public $table = "cliente";
-	protected $fillable = ['cpf_cnpj','nome'];
+    public $table = "item_venda";
+	protected $fillable = ['venda','produto', 'valor_produto', 'quantidade'];
     
     public function produto()
     {
@@ -18,7 +19,7 @@ class ItemVenda extends Model
 
     public function venda()
     {
-        return $this->belongsTo(Produto::class);
+        return $this->belongsTo(Venda::class);
     }
 
 }
