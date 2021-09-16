@@ -8,7 +8,7 @@ use ItemVenda;
 class Produto extends Model
 {
     public $table = "produto";
-	protected $fillable = ['produto', 'descricao', 'valor', 'quantidade_estoque'];
+	protected $fillable = ['produto', 'descricao', 'valor', 'created_at', 'updated_at'];
     
     public function item_venda()
     {
