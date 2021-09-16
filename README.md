@@ -1,79 +1,203 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/L-ivel96/crud_api_laravel/master/public/img/img_readme_1.jpg" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## Introdução
+Esta é uma aplicação CRUD de cadastro de cliente e produto, que possui seus métodos em rotas disponibilizadas via API, mas é possivel acessar também por rotas web (possui views para isso).
+No quadro do Trello tem as futuras implementações e melhorias deste projeto (Link na seção Links de apoio). as branchs são nomeadas conforme o numero dos chamados (disponivel no trello), é possivel acompanhar o que já foi concluído na coluna "Finalizado"
 
-## About Laravel
+## Sumário
+    1. Informações do sistema
+    2. links de apoio
+    3. API
+    4. Como instalar o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Informações do sistema
+  - Laravel Framework 7.11.0
+  - PHP 7.3
+  - Apache 2.4
+  - MySQL 5.7
+  - Bootstrap 4.3
+  - JQuery 3.5
+  - fontawesome v5.8.1
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## links de apoio
 
-## Learning Laravel
+Links de documentações e materiais de apoio
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+  - [documentação Laravel](https://laravel.com/docs/7.x)
+  - [documentação Jquery](https://api.jquery.com/category/version/3.5/)
+  - [documentação Jquery - W3Schools](https://www.w3schools.com/jquERy/default.asp)
+  - [documentação Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
+  - [Icones Fontawesome](https://fontawesome.com/v5.9/icons)
+  - [Quadro do Trello](https://trello.com/b/IdYj8BoI/crud-laravel)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## API
+**TOKEN** 
+Na versão atual, está com uma chave fixa que se baseia em:
+"senha_api@" . Carbon::today()
+**OBS:** não contém aspas duplas (") na senha, é a concatenação de __senha_api@__ + Carbon::today()
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+### Clientes
+1. Listar
+**rota:** "/api/listar_cliente"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+}
 
-## Contributing
+2. Cadastrar
+**rota:** "/api/cadastrar_cliente"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+    cpf_cnpj: "123456789" [STRING]
+    nome: "Nome Teste" [STRING]
+}
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+3. Editar
+**rota:** "/api/editar_cliente"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+    cpf_cnpj: "9999999999" [ STRING ]
+    nome: "Nome Teste 2" [ STRING ]
+}
 
-## Code of Conduct
+4. Excluir
+**rota:** "/api/excluir_cliente"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+    id: 1 [ INTEGER ]
+}
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Produtos
+1. Listar
+**rota:** "/api/listar_produto"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+}
 
-## Security Vulnerabilities
+2. Cadastrar
+**rota:** "/api/cadastrar_produto"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+    produto: "Calça" [ STRING ]
+    descricao: "Calça para inverno" [ STRING ]
+    valor: 250.46 [ FLOAT ]
+}
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+3. Editar
+**rota:** "/api/editar_produto"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+    produto: "Calça" [ STRING ]
+    descricao: "Calça para inverno" [ STRING ]
+    valor: 250.46 [ FLOAT ]
+    id: 1 [ INTEGER ]
+}
 
-## License
+4. Excluir
+**rota:** "/api/excluir_produto"
+**Método:** POST
+**Parametros:** {
+    token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
+    id: 1 [ INTEGER ]
+}
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Como instalar o projeto
+
+Este guia de instalação não utilizará Docker, para poder configurar o ambiente sugiro o uso do [WAMP](https://www.wampserver.com/en/) / [LAMP](https://rockcontent.com/br/blog/lamp/) / [MAMP](https://www.mamp.info/en/mac/) (dependendo do seu sistema operacional, se estiver usando Windows, de uma olhada no [Laragon](https://laragon.org/) ) 
+
+
+Você também precisará instalar:
+  - git
+  - git bash (Se utilizar Windows)
+  - composer
+
+### 1. Baixar dependencias
+Na raiz do projeto, execute o seguinte comando no terminal:
+```
+composer install
+```
+
+### 2. Configurar arquivo .env
+1. Você deve criar o banco de dados local.
+2. copiar o arquivo env.example, colar na raiz do projeto e renomear para .env
+3. no arquivo .env configurar variáveis de banco de dados:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=laravel
+DB_USERNAME=root
+DB_PASSWORD=
+```
+
+### 3. Gerar APP_KEY do .env
+Na raiz do projeto, execute o seguinte comando no terminal:
+```
+php artisan key:generate
+```
+
+### 4. Configurar virtual Host
+
+**Nota:** estou chamando meu projeto de "api.test" para o virtual host.
+
+**NO Windows**, você deve ir até a pasta { caminho do seu PC }\System32\drivers\etc, no arquivo "hosts" Add linha:
+```
+127.0.0.1      api.test
+```
+
+Você deve localizar o arquivo de virtual host do apache e add as seguintes configurações:
+```
+# API
+<VirtualHost *:80> 
+    DocumentRoot "< caminho do projeto>/public/"
+    ServerName api.test
+    ServerAlias *.api.test
+    <Directory "< caminho do projeto>/public/">
+        AllowOverride All
+        Require all granted
+    </Directory>
+</VirtualHost>
+```
+
+Caso queira configurar para acessar com HTTPS
+```
+# API
+<VirtualHost *:443> 
+    DocumentRoot "<caminho>/api_laravel_vuejs/api/public/"
+    ServerName api.test
+    ServerAlias *.api.test
+    <Directory "<caminho>/api_laravel_vuejs/api/public/">
+        AllowOverride All
+        Require all granted
+    </Directory>
+    SSLEngine on
+    SSLCertificateFile      < caminho da chave>/chave.crt
+    SSLCertificateKeyFile   < caminho da chave>/chave.key
+</VirtualHost>
+```
+
+### 5. Populando o banco de dados
+Na raiz do projeto, execute o seguinte comando no terminal:
+```
+php artisan migrate
+```
+
+### 6. Populando tabelas do banco de dados (Opcional)
+Caso queira iniciar a aplicação já com alguns dados de exemplo, Na raiz do projeto, execute o seguinte comando no terminal:
+```
+php artisan db:seed
+```
+
+
+## Author: 
+**Levi Siqueira**: @L-ivel96 (https://github.com/L-ivel96/)
+
