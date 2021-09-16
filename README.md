@@ -34,85 +34,100 @@ Links de documentações e materiais de apoio
 
 # API
 **TOKEN** 
-<p>Na versão atual, está com uma chave fixa que se baseia em:
-"senha_api@" . Carbon::today()
-**OBS:** não contém aspas duplas (") na senha, é a concatenação de __senha_api@__ + Carbon::today()</p>
-
+<p>Na versão atual, está com uma chave fixa que se baseia em: <br/>
+"senha_api@" . Carbon::today()<br/>
+**OBS:** não contém aspas duplas (") na senha, é a concatenação de __senha_api@__ + Carbon::today()</p><br/>
 
 ## Clientes
 ### **Listar**
-<p><b>rota:</b> "/api/listar_cliente"
-<b>Método:<b> POST
-<b>Parametros:<b> {
+```
+rota: "/api/listar_cliente"
+Método:<b> POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
-}</p>
+}
+```
 
 ### **Cadastrar**
-<p><b>rota:</b> "/api/cadastrar_cliente"
-<b>Método:</b> POST
-<b>Parametros:</b> {
+```
+rota: "/api/cadastrar_cliente"
+Método: POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     cpf_cnpj: "123456789" [STRING]
     nome: "Nome Teste" [STRING]
-}</p>
+}
+```
 
 ### **Editar**
-<p><b>rota:<b> "/api/editar_cliente"
-<b>Método:<b> POST
-<b>Parametros:<b> {
+```
+rota: "/api/editar_cliente"
+Método: POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     cpf_cnpj: "9999999999" [ STRING ]
     nome: "Nome Teste 2" [ STRING ]
-}</p>
+}
+```
 
 ### **Excluir**
-<p><b>rota:</b> "/api/excluir_cliente"
-<b>Método:</b> POST
-<b>Parametros:</b> {
+```
+rota: "/api/excluir_cliente"
+Método: POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     id: 1 [ INTEGER ]
-}</p>
+}
+```
 
 ## Produtos
 ### **Listar**
-<p><b>rota:</b> "/api/listar_produto"
-<b>Método:</b> POST
-<b>Parametros:</b> {
+```
+rota: "/api/listar_produto"
+Método: POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
-}</p>
+}
+```
 
 ### **Cadastrar**
-<p><b>rota:</b> "/api/cadastrar_produto"
-<b>Método:</b> POST
-<b>Parametros:</b> {
+```
+rota: "/api/cadastrar_produto"
+Método: POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     produto: "Calça" [ STRING ]
     descricao: "Calça para inverno" [ STRING ]
     valor: 250.46 [ FLOAT ]
-}</p>
+}
+```
 
 ### **Editar**
-<p><b>rota:</b> "/api/editar_produto"
-<b>Método:</b> POST
-<b>Parametros:</b> {
+```
+rota: "/api/editar_produto"
+Método: POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     produto: "Calça" [ STRING ]
     descricao: "Calça para inverno" [ STRING ]
     valor: 250.46 [ FLOAT ]
     id: 1 [ INTEGER ]
-}</p>
+}
+```
 
 ### **Excluir**
-<p><b>rota:</b> "/api/excluir_produto"
-<b>Método:</b> POST
-<b>Parametros:</b> {
+```
+rota: "/api/excluir_produto"
+Método: POST
+Parametros: {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     id: 1 [ INTEGER ]
-}</p>
+}
+```
 
 # Como instalar o projeto
 
-<p>Este guia de instalação não utilizará Docker, para poder configurar o ambiente sugiro o uso do [WAMP](https://www.wampserver.com/en/) / [LAMP](https://rockcontent.com/br/blog/lamp/) / [MAMP](https://www.mamp.info/en/mac/) (dependendo do seu sistema operacional, se estiver usando Windows, de uma olhada no [Laragon](https://laragon.org/) ) </p>
+Este guia de instalação não utilizará Docker, para poder configurar o ambiente sugiro o uso do [WAMP](https://www.wampserver.com/en/) / [LAMP](https://rockcontent.com/br/blog/lamp/) / [MAMP](https://www.mamp.info/en/mac/) (dependendo do seu sistema operacional, se estiver usando Windows, de uma olhada no [Laragon](https://laragon.org/) )
 
 Você também precisará instalar:
   - git
