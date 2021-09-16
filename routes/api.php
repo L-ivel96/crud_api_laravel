@@ -14,8 +14,38 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+//Testar remover esta rota
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+}); */
+
+//JWT
+Route::group([
+    //'middleware' => ['apiJwt'],
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('registrar', 'AuthController@register');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
+});
+
+Route::group([
+    'middleware' => ['apiJwt'],
+    'prefix' => 'v2'
+], function ($router) {
+    //Clientes
+    Route::post('/cadastrar_cliente', 'ClienteController@cadastrar');
+    Route::post('/listar_cliente', 'ClienteController@listar');
+    Route::put('/editar_cliente', 'ClienteController@editar');
+    Route::delete('/excluir_cliente', 'ClienteController@excluir');
+
+    //Produto
+    Route::post('/cadastrar_produto', 'ProdutoController@cadastrar');
+    Route::post('/listar_produto', 'ProdutoController@listar');
+    Route::put('/editar_produto', 'ProdutoController@editar');
+    Route::delete('/excluir_produto', 'ProdutoController@excluir');
 });
 
 //Clientes

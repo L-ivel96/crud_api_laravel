@@ -1,0 +1,889 @@
+{
+	"info": {
+		"_postman_id": "19ed3b26-59d2-4405-aecb-0574198c8e7a",
+		"name": "crud_laravel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Registrar Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "User",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "mail@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "password_confirmation",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/registrar",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"registrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "mail@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgyNzg5MiwiZXhwIjoxNjMxODMxNDkyLCJuYmYiOjE2MzE4Mjc4OTIsImp0aSI6IjBzUnhhV3RlaXJxcExjdDciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.BjtMEjxKzScWqmRoyLb7BKKXxQawzeVxIYIuCQpO6xo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "User",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "email",
+							"value": "mail@mail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/auth/logout",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar Usuario",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgyNzg5MiwiZXhwIjoxNjMxODMxNDkyLCJuYmYiOjE2MzE4Mjc4OTIsImp0aSI6IjBzUnhhV3RlaXJxcExjdDciLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.BjtMEjxKzScWqmRoyLb7BKKXxQawzeVxIYIuCQpO6xo",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://api.test/api/auth/me",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cliente S/A",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/listar_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"listar_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Cliente S/A",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "cpf_cnpj",
+							"value": "12345678911",
+							"type": "text"
+						},
+						{
+							"key": "nome",
+							"value": "Nome Teste 5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/cadastrar_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"cadastrar_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Cliente S/A",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "nome",
+							"value": "NOME NOME PUT",
+							"type": "text"
+						},
+						{
+							"key": "cpf_cnpj",
+							"value": "7896",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/editar_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"editar_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Cliente S/A",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/excluir_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"excluir_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Produto S/A",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/listar_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"listar_produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Produto S/A",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "produto",
+							"value": "Calça",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "Para uma jovem de 16 anos",
+							"type": "text"
+						},
+						{
+							"key": "valor",
+							"value": "120,62",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/cadastrar_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"cadastrar_produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Produto S/A",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "produto",
+							"value": "Blusa 23",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "Algo",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "valor",
+							"value": "10",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/editar_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"editar_produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Produto S/A",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/excluir_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"excluir_produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Cliente C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/listar_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"listar_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Cliente C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "cpf_cnpj",
+							"value": "12345678911",
+							"type": "text"
+						},
+						{
+							"key": "nome",
+							"value": "Nome Teste 5",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/cadastrar_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"cadastrar_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Cliente C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "11",
+							"type": "text"
+						},
+						{
+							"key": "nome",
+							"value": "NOME NOME PUT",
+							"type": "text"
+						},
+						{
+							"key": "cpf_cnpj",
+							"value": "7896",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/editar_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"editar_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Cliente C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "11",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/excluir_cliente",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"excluir_cliente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar Produto C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/listar_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"listar_produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Cadastrar Produto C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "produto",
+							"value": "Calça",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "Para uma jovem de 16 anos",
+							"type": "text"
+						},
+						{
+							"key": "valor",
+							"value": "120.62",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/cadastrar_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"cadastrar_produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Produto C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "9",
+							"type": "text"
+						},
+						{
+							"key": "produto",
+							"value": "Blusa 23",
+							"type": "text"
+						},
+						{
+							"key": "descricao",
+							"value": "Algo",
+							"type": "text"
+						},
+						{
+							"key": "valor",
+							"value": "10",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/editar_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"editar_produto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Excluir Produto C/A",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYzMTgzMDYyNiwiZXhwIjoxNjMxODM0MjI2LCJuYmYiOjE2MzE4MzA2MjYsImp0aSI6ImRDdEl3UExiRExaUWQ0bXEiLCJzdWIiOjEsInBydiI6Ijg3ZTBhZjFlZjlmZDE1ODEyZmRlYzk3MTUzYTE0ZTBiMDQ3NTQ2YWEifQ.ePg8r-kt7qNTBL19fAzMT8_3TjnM4KckFknOytkMlAQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "token",
+							"value": "df39b97475c3b09b1724a74a36ca7034",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://api.test/api/v2/excluir_produto",
+					"protocol": "http",
+					"host": [
+						"api",
+						"test"
+					],
+					"path": [
+						"api",
+						"v2",
+						"excluir_produto"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
