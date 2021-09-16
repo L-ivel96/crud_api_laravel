@@ -14,9 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+//Testar remover esta rota
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+}); */
+
+//JWT
+Route::group([
+    //'middleware' => ['apiJwt'],
+    'prefix' => 'auth'
+], function ($router) {
+    Route::post('registrar', 'AuthController@register');
+    Route::post('login', 'AuthController@login');
+    Route::post('logout', 'AuthController@logout');
+    Route::post('refresh', 'AuthController@refresh');
+    Route::post('me', 'AuthController@me');
 });
+
 
 //Clientes
 Route::post('/cadastrar_cliente', 'ClienteController@cadastrar');
