@@ -18,7 +18,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" id="editar">Editar</button>
-            <a href="./listar_clientes" class="btn btn-primary">Voltar</a>
+            <a href="/listar_clientes" class="btn btn-primary">Voltar</a>
         </div>
     </form>
 
@@ -49,7 +49,11 @@
 
                 if(nome_c == "" || cpf_cnpj_c == "")
                 {
-                    alert("Todos os campos são obrigatórios");
+                    swal({
+                        title: "Ops!",
+                        text: "Todos os campos são obrigatórios",
+                        icon: "warning"
+                    });
                     return false;
                 }
 
@@ -60,12 +64,19 @@
                     data: dados,
                 })
                 .done(function(dados) {
-                    console.log("success");
+                    swal({
+                        title: "Atualizado!",
+                        text: "Cadastro atualizado com sucesso",
+                        icon: "success"
+                    });
                     window.location.href = "/listar_clientes"; 
                 })
                 .fail(function(erro) {
-                    console.log(erro);
-                    alert("Erro ao tentar Editar!")
+                    swal({
+                        title: "Algo deu errado...",
+                        text: "Erro ao tentar atualizar, tente novamente",
+                        icon: "error"
+                    });
                 });
                 return false;
             });

@@ -49,14 +49,6 @@
                 event.preventDefault();
 
                 var dados = $("#form_cadastro").serialize();
-                let nome_c = $("#nome").val();
-                let cpf_cnpj_c = $("#cpf_cnpj").val();
-
-                if(nome_c == "" || cpf_cnpj_c == "")
-                {
-                    alert("Todos os campos são obrigatórios");
-                    return false;
-                }
 
                 $.ajax({
                     url: '../api/editar_produto',
@@ -65,13 +57,20 @@
                     data: dados,
                 })
                 .done(function(dados) {
-                    console.log("success");
+                    swal({
+                        title: "Atualizado!",
+                        text: "Cadastro atualizado com sucesso",
+                        icon: "success"
+                    });
                     window.location.href = "/listar_produto"; 
 
                 })
                 .fail(function(erro) {
-                    console.log(erro);
-                    alert("Erro ao tentar Editar!")
+                    swal({
+                        title: "Algo deu errado...",
+                        text: "Erro ao tentar atualizar, tente novamente",
+                        icon: "error"
+                    });
                 });
                 return false;
             });

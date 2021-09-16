@@ -42,17 +42,29 @@
                     console.log(dados);
                     if(dados.id)
                     {
+                        swal({
+                            title: "Cadastrado!",
+                            text: "Cadastro realizado com sucesso",
+                            icon: "success"
+                        });
                         window.location.href = "/listar_produto";    
                     }
                     else
                     {
-                        alert("Erro ao tentar cadastrar, tente novamente. Todos os campos deve ser preenchidos");
+                        swal({
+                            title: "Algo deu errado...",
+                            text: "Erro ao tentar cadastrar, tente novamente",
+                            icon: "error"
+                        });
                     }
 
                 })
                 .fail(function(erro) {
-                    console.log(erro);
-                    alert("Erro ao tentar cadastrar!")
+                    swal({
+                        title: "Algo deu errado...",
+                        text: "Erro ao tentar cadastrar, tente novamente",
+                        icon: "error"
+                    });
                 });
             });
 

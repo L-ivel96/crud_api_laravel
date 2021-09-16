@@ -94,20 +94,48 @@
             let linha = $(this).parent().parent();
             let id_linha = linha.attr('id');
 
-            $.ajax({
-                url: './api/excluir_produto',
-                type: 'DELETE',
-                dataType: 'json',
-                data: {id: id_linha, token: '{{$token}}'},
+            swal({
+                title: "Atenção!",
+                text: "A exclusão é permanente, deseja excluir registro?",
+                icon: "warning",
+                dangerMode: true,
+                buttons: {
+                    cancel: {
+                        text: "Cancelar",
+                        value: null,
+                        visible: true,
+                        className: ""
+                    },
+                    confirm: {
+                        text: "Excluir",
+                        value: true,
+                        visible: true,
+                        className: ""
+                    }
+                },
             })
-            .done(function() {
-                console.log("success");
-                linha.remove();
+            .then((escolha) => {
+                if (escolha) {
+                    $.ajax({
+                        url: './api/excluir_produto',
+                        type: 'DELETE',
+                        dataType: 'json',
+                        data: {id: id_linha, token: '{{$token}}'},
+                    })
+                    .done(function() {
+                        linha.remove();
 
-            })
-            .fail(function(error) {
-                console.log(error);
-            })
+                    })
+                    .fail(function(error) {
+                        swal({
+                            title: "Erro",
+                            text: "Não foi possível excluir o registro!",
+                            icon: "error"
+                        });
+                    });
+                }
+            });
+            
         }
 
     </script>
