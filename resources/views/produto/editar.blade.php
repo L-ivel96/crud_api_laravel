@@ -28,6 +28,8 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
+            $("#gif_carregando").css('display', 'block');
+
             $.ajax({
                 url: '../api/listar_produto',
                 type: 'POST',
@@ -43,6 +45,9 @@
             })
             .fail(function(erro) {
                 console.log(erro);
+            })
+            .always(function() {
+                $("#gif_carregando").css('display', 'none');
             });
 
             $("#editar").click(function(event) {
