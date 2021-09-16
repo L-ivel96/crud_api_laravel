@@ -1,16 +1,16 @@
 <p align="center"><img src="https://raw.githubusercontent.com/L-ivel96/crud_api_laravel/master/public/img/img_readme_1.jpg" width="400"></p>
 
-## Introdução
+# Introdução
 Esta é uma aplicação CRUD de cadastro de cliente e produto, que possui seus métodos em rotas disponibilizadas via API, mas é possivel acessar também por rotas web (possui views para isso).
 No quadro do Trello tem as futuras implementações e melhorias deste projeto (Link na seção Links de apoio). as branchs são nomeadas conforme o numero dos chamados (disponivel no trello), é possivel acompanhar o que já foi concluído na coluna "Finalizado"
 
-## Sumário
+# Sumário
     1. Informações do sistema
     2. links de apoio
     3. API
     4. Como instalar o projeto
 
-## Informações do sistema
+# Informações do sistema
   - Laravel Framework 7.11.0
   - PHP 7.3
   - Apache 2.4
@@ -20,113 +20,112 @@ No quadro do Trello tem as futuras implementações e melhorias deste projeto (L
   - fontawesome v5.8.1
 
 
-## links de apoio
-
+# links de apoio
 Links de documentações e materiais de apoio
 
+  - [Quadro do Trello](https://trello.com/b/IdYj8BoI/crud-laravel)
   - [documentação Laravel](https://laravel.com/docs/7.x)
   - [documentação Jquery](https://api.jquery.com/category/version/3.5/)
   - [documentação Jquery - W3Schools](https://www.w3schools.com/jquERy/default.asp)
   - [documentação Bootstrap](https://getbootstrap.com/docs/4.0/getting-started/introduction/)
   - [Icones Fontawesome](https://fontawesome.com/v5.9/icons)
-  - [Quadro do Trello](https://trello.com/b/IdYj8BoI/crud-laravel)
+  - [Sweet Alert](https://sweetalert.js.org/guides/)
 
 
-## API
+# API
 **TOKEN** 
-Na versão atual, está com uma chave fixa que se baseia em:
+<p>Na versão atual, está com uma chave fixa que se baseia em:
 "senha_api@" . Carbon::today()
-**OBS:** não contém aspas duplas (") na senha, é a concatenação de __senha_api@__ + Carbon::today()
+**OBS:** não contém aspas duplas (") na senha, é a concatenação de __senha_api@__ + Carbon::today()</p>
 
 
-### Clientes
-#### Listar
-**rota:** "/api/listar_cliente"
-**Método:** POST
-**Parametros:** {
+## Clientes
+### **Listar**
+<p><b>rota:</b> "/api/listar_cliente"
+<b>Método:<b> POST
+<b>Parametros:<b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
-}
+}</p>
 
-#### Cadastrar
-**rota:** "/api/cadastrar_cliente"
-**Método:** POST
-**Parametros:** {
+### **Cadastrar**
+<p><b>rota:</b> "/api/cadastrar_cliente"
+<b>Método:</b> POST
+<b>Parametros:</b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     cpf_cnpj: "123456789" [STRING]
     nome: "Nome Teste" [STRING]
-}
+}</p>
 
-#### Editar
-**rota:** "/api/editar_cliente"
-**Método:** POST
-**Parametros:** {
+### **Editar**
+<p><b>rota:<b> "/api/editar_cliente"
+<b>Método:<b> POST
+<b>Parametros:<b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     cpf_cnpj: "9999999999" [ STRING ]
     nome: "Nome Teste 2" [ STRING ]
-}
+}</p>
 
-#### Excluir
-**rota:** "/api/excluir_cliente"
-**Método:** POST
-**Parametros:** {
+### **Excluir**
+<p><b>rota:</b> "/api/excluir_cliente"
+<b>Método:</b> POST
+<b>Parametros:</b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     id: 1 [ INTEGER ]
-}
+}</p>
 
-### Produtos
-#### Listar
-**rota:** "/api/listar_produto"
-**Método:** POST
-**Parametros:** {
+## Produtos
+### **Listar**
+<p><b>rota:</b> "/api/listar_produto"
+<b>Método:</b> POST
+<b>Parametros:</b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
-}
+}</p>
 
-#### Cadastrar
-**rota:** "/api/cadastrar_produto"
-**Método:** POST
-**Parametros:** {
+### **Cadastrar**
+<p><b>rota:</b> "/api/cadastrar_produto"
+<b>Método:</b> POST
+<b>Parametros:</b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     produto: "Calça" [ STRING ]
     descricao: "Calça para inverno" [ STRING ]
     valor: 250.46 [ FLOAT ]
-}
+}</p>
 
-#### Editar
-**rota:** "/api/editar_produto"
-**Método:** POST
-**Parametros:** {
+### **Editar**
+<p><b>rota:</b> "/api/editar_produto"
+<b>Método:</b> POST
+<b>Parametros:</b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     produto: "Calça" [ STRING ]
     descricao: "Calça para inverno" [ STRING ]
     valor: 250.46 [ FLOAT ]
     id: 1 [ INTEGER ]
-}
+}</p>
 
-#### Excluir
-**rota:** "/api/excluir_produto"
-**Método:** POST
-**Parametros:** {
+### **Excluir**
+<p><b>rota:</b> "/api/excluir_produto"
+<b>Método:</b> POST
+<b>Parametros:</b> {
     token: "df39b97475c3b09b1724a74a36ca7034" [ STRING ]
     id: 1 [ INTEGER ]
-}
+}</p>
 
-## Como instalar o projeto
+# Como instalar o projeto
 
-Este guia de instalação não utilizará Docker, para poder configurar o ambiente sugiro o uso do [WAMP](https://www.wampserver.com/en/) / [LAMP](https://rockcontent.com/br/blog/lamp/) / [MAMP](https://www.mamp.info/en/mac/) (dependendo do seu sistema operacional, se estiver usando Windows, de uma olhada no [Laragon](https://laragon.org/) ) 
-
+<p>Este guia de instalação não utilizará Docker, para poder configurar o ambiente sugiro o uso do [WAMP](https://www.wampserver.com/en/) / [LAMP](https://rockcontent.com/br/blog/lamp/) / [MAMP](https://www.mamp.info/en/mac/) (dependendo do seu sistema operacional, se estiver usando Windows, de uma olhada no [Laragon](https://laragon.org/) ) </p>
 
 Você também precisará instalar:
   - git
   - git bash (Se utilizar Windows)
   - composer
 
-### 1. Baixar dependencias
+## 1. Baixar dependencias
 Na raiz do projeto, execute o seguinte comando no terminal:
 ```
 composer install
 ```
 
-### 2. Configurar arquivo .env
+## 2. Configurar arquivo .env
 1. Você deve criar o banco de dados local.
 2. copiar o arquivo env.example, colar na raiz do projeto e renomear para .env
 3. no arquivo .env configurar variáveis de banco de dados:
@@ -139,13 +138,13 @@ DB_USERNAME=root
 DB_PASSWORD=
 ```
 
-### 3. Gerar APP_KEY do .env
+## 3. Gerar APP_KEY do .env
 Na raiz do projeto, execute o seguinte comando no terminal:
 ```
 php artisan key:generate
 ```
 
-### 4. Configurar virtual Host
+## 4. Configurar virtual Host
 
 **Nota:** estou chamando meu projeto de "api.test" para o virtual host.
 
@@ -185,18 +184,17 @@ Caso queira configurar para acessar com HTTPS
 </VirtualHost>
 ```
 
-### 5. Populando o banco de dados
+## 5. Populando o banco de dados
 Na raiz do projeto, execute o seguinte comando no terminal:
 ```
 php artisan migrate
 ```
 
-### 6. Populando tabelas do banco de dados (Opcional)
+## 6. Populando tabelas do banco de dados (Opcional)
 Caso queira iniciar a aplicação já com alguns dados de exemplo, Na raiz do projeto, execute o seguinte comando no terminal:
 ```
 php artisan db:seed
 ```
-
 
 ## Author: 
 **Levi Siqueira**: @L-ivel96 (https://github.com/L-ivel96/)
