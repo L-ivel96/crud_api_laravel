@@ -22,6 +22,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" id="editar">Editar</button>
+            <a href="./listar_produto" class="btn btn-primary">Voltar</a>
         </div>
     </form>
 
@@ -48,14 +49,8 @@
                 event.preventDefault();
 
                 var dados = $("#form_cadastro").serialize();
-                let nome_c = $("#nome").val();
-                let cpf_cnpj_c = $("#cpf_cnpj").val();
 
-                if(nome_c == "" || cpf_cnpj_c == "")
-                {
-                    alert("Todos os campos são obrigatórios");
-                    return false;
-                }
+                $("#gif_carregando").css('display', 'block');
 
                 $.ajax({
                     url: '../api/editar_produto',
@@ -64,14 +59,25 @@
                     data: dados,
                 })
                 .done(function(dados) {
-                    console.log("success");
-                    window.location.href = "../pagina_listar_produto"; 
+                    swal({
+                        title: "Atualizado!",
+                        text: "Cadastro atualizado com sucesso",
+                        icon: "success"
+                    });
+                    window.location.href = "/listar_produto"; 
 
                 })
                 .fail(function(erro) {
-                    console.log(erro);
-                    alert("Erro ao tentar Editar!")
+                    swal({
+                        title: "Algo deu errado...",
+                        text: "Erro ao tentar atualizar, tente novamente",
+                        icon: "error"
+                    });
+                })
+                .always(function() {
+                    $("#gif_carregando").css('display', 'none');
                 });
+
                 return false;
             });
 

@@ -21,7 +21,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-primary" id="cadastrar">Cadastrar</button>
-            <a href="./pagina_listar_produto" class="btn btn-primary">Voltar</a>
+            <a href="./listar_produto" class="btn btn-primary">Voltar</a>
         </div>
     </form>
 
@@ -32,6 +32,7 @@
 
                 var dados = $("#form_cadastro").serialize();
 
+                $("#gif_carregando").css('display', 'block');
                 $.ajax({
                     url: './api/cadastrar_produto',
                     type: 'POST',
@@ -42,18 +43,34 @@
                     console.log(dados);
                     if(dados.id)
                     {
-                        window.location.href = "./pagina_listar_produto";    
+                        swal({
+                            title: "Cadastrado!",
+                            text: "Cadastro realizado com sucesso",
+                            icon: "success"
+                        });
+                        window.location.href = "/listar_produto";    
                     }
                     else
                     {
-                        alert("Erro ao tentar cadastrar, tente novamente. Todos os campos deve ser preenchidos");
+                        swal({
+                            title: "Algo deu errado...",
+                            text: "Erro ao tentar cadastrar, tente novamente",
+                            icon: "error"
+                        });
                     }
 
                 })
                 .fail(function(erro) {
-                    console.log(erro);
-                    alert("Erro ao tentar cadastrar!")
+                    swal({
+                        title: "Algo deu errado...",
+                        text: "Erro ao tentar cadastrar, tente novamente",
+                        icon: "error"
+                    });
+                })
+                .always(function() {
+                    $("#gif_carregando").css('display', 'none');
                 });
+                
             });
 
         });

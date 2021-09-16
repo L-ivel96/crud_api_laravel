@@ -8,16 +8,23 @@
     <title>@yield('cabecalho')</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{asset('css/estilo.css')}}<?= "?". time(); ?>" />
     <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
-    <script src="{{asset('js/funcoes.js')}}"></script>
+    <script src="{{asset('js/funcoes.js')}}<?= "?". time(); ?>"></script>
+    <script src="{{asset('js/sweetalert.min.js')}}"></script>
 </head>
 <body>
+    <div id="gif_carregando" class="gif_carregando" style="display: none;">
+        <div class="flex_1" style="height: 100vh;">
+            <img src="{{asset('img/carregando_eng.gif')}}") ?>">
+        </div>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light mb-2 d-flex justify-content-between" style="background-color: #e9ecef;">
         <h2>@yield('cabecalho')</h2>
         <div class="d-flex justify-content-around">
             <a class="navbar-brand" href="{{ route('listar_cliente') }}">Clientes</a>
             <a class="navbar-brand" href="{{ route('listar_produto') }}">Produtos</a>
-            <a class="navbar-brand" href="{{ route('listar_cliente') }}">Vendas</a>
+            <?php //<a class="navbar-brand" href="{{ route('listar_cliente') }}">Vendas</a> ?>
         </div>
     </nav>
     <div class="container">
