@@ -32,6 +32,7 @@
 
                 var dados = $("#form_cadastro").serialize();
 
+                $("#gif_carregando").css('display', 'block');
                 $.ajax({
                     url: './api/cadastrar_produto',
                     type: 'POST',
@@ -65,7 +66,11 @@
                         text: "Erro ao tentar cadastrar, tente novamente",
                         icon: "error"
                     });
+                })
+                .always(function() {
+                    $("#gif_carregando").css('display', 'none');
                 });
+                
             });
 
         });

@@ -50,6 +50,8 @@
 
                 var dados = $("#form_cadastro").serialize();
 
+                $("#gif_carregando").css('display', 'block');
+
                 $.ajax({
                     url: '../api/editar_produto',
                     type: 'PUT',
@@ -71,7 +73,11 @@
                         text: "Erro ao tentar atualizar, tente novamente",
                         icon: "error"
                     });
+                })
+                .always(function() {
+                    $("#gif_carregando").css('display', 'none');
                 });
+
                 return false;
             });
 

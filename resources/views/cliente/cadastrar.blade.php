@@ -40,6 +40,7 @@
                     return false;
                 }
 
+                $("#gif_carregando").css('display', 'block');
                 $.ajax({
                     url: './api/cadastrar_cliente',
                     type: 'POST',
@@ -73,7 +74,11 @@
                         text: "Erro ao tentar cadastrar, tente novamente",
                         icon: "error"
                     });
+                })
+                .always(function() {
+                    $("#gif_carregando").css('display', 'none');
                 });
+                
                 return false;
             });
 

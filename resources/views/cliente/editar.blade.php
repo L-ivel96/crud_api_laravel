@@ -57,6 +57,8 @@
                     return false;
                 }
 
+                $("#gif_carregando").css('display', 'block');
+                
                 $.ajax({
                     url: '../api/editar_cliente',
                     type: 'PUT',
@@ -77,7 +79,11 @@
                         text: "Erro ao tentar atualizar, tente novamente",
                         icon: "error"
                     });
+                })
+                .always(function() {
+                    $("#gif_carregando").css('display', 'none');
                 });
+
                 return false;
             });
 

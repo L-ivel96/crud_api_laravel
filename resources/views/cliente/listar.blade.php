@@ -8,7 +8,7 @@
     <div class="table-responsive">
         <table id="tabela_clientes" class="table table-striped table-bordered">
             <thead class="thead-dark">
-                <tr>
+                <tr class="text-center">
                     <th>Nome</th>
                     <th>CPF/CNPJ</th>
                     <th>Editar</th>
@@ -19,7 +19,12 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="4"><a href="./cadastrar_cliente" class="btn btn-info">Adicionar Cliente</a></td>
+                    <td colspan="3">
+                        <a href="./cadastrar_cliente" class="btn btn-info">
+                            Adicionar Cliente
+                            <i class="fas fa-user-plus"></i>
+                        </a>
+                    </td>
                 </tr>
             </tfoot>
         </table>
@@ -29,6 +34,8 @@
         var corpo_tabela = $("#tabela_clientes tbody");
         function carrega_dados()
         {
+            $("#gif_carregando").css('display', 'block');
+
             $.ajax({
                 url: './api/listar_cliente',
                 type: 'POST',
@@ -52,23 +59,20 @@
                             class: 'btn btn-warning',
                             href: link_editar
                         });
-                        btn_editar.append("Editar");
+                        btn_editar.html('Editar <i class="fas fa-edit"></i>');
 
                     let btn_excluir = $("<a></a>");
                         btn_excluir.attr('class', 'btn btn-danger');
-                        btn_excluir.append("Excluir");
+                        btn_excluir.html('Excluir <i class="fas fa-trash-alt"></i>');
                         btn_excluir.click(deleta_linha);
 
-                    let coluna_editar = $("<td></td>");
-                        coluna_editar.append(btn_editar);
-
-                    let coluna_deletar = $("<td></td>");
-                        coluna_deletar.append(btn_excluir);
+                    let coluna_acao = $("<td class='text-center'></td>");
+                        coluna_acao.append(btn_editar);
+                        coluna_acao.append(btn_excluir);
 
                     linha.append(coluna_nome);
                     linha.append(coluna_cpf_cnpj);
-                    linha.append(coluna_editar);
-                    linha.append(coluna_deletar);
+                    linha.append(coluna_acao);
 
                     corpo_tabela.append(linha);
 
@@ -76,7 +80,14 @@
                 
             })
             .fail(function(erro) {
-                console.log(erro);
+                swal({
+                    title: "Erro!",
+                    text: "Não foi possível carregar os clientes, verifique sua conexão e tente novamente!",
+                    icon: "error"
+                });
+            })
+            .always(function() {
+                $("#gif_carregando").css('display', 'none');
             });
             
         }
@@ -112,6 +123,9 @@
             })
             .then((escolha) => {
                 if (escolha) {
+                    
+                    $("#gif_carregando").css('display', 'block');
+
                     $.ajax({
                         url: './api/excluir_cliente',
                         type: 'DELETE',
@@ -130,6 +144,9 @@
                             icon: "error"
                         });
                     })
+                    .always(function() {
+                        $("#gif_carregando").css('display', 'none');
+                    });
                 }
             });
         }
